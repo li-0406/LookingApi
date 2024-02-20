@@ -1,14 +1,11 @@
 {
-  "name": "looking",
-  "homepage": "https://li-0406.github.io/looking.com",
+  "name": "api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
