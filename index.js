@@ -1,11 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import hotelsApiRoute from "../ApiRoutes/hotels.js";
-import roomsApiRoute from "../ApiRoutes/rooms.js";
-import usersApiRoute from "../ApiRoutes/users.js";
-import authApiRoute from "../ApiRoutes/auth.js";
-import orderApiRoute from "../ApiRoutes/order.js";
+import hotelsApiRoute from "./ApiRoutes/hotels.js";
+import roomsApiRoute from "./ApiRoutes/rooms.js";
+import usersApiRoute from "./ApiRoutes/users.js";
+import authApiRoute from "./ApiRoutes/auth.js";
+import orderApiRoute from "./ApiRoutes/order.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
