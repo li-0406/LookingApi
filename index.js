@@ -10,7 +10,7 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 dotenv.config();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const connect = async () => {
   try {
