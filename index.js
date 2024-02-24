@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import hotelsApiRoute from "./ApiRoutes/hotels.js";
@@ -10,6 +11,7 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 dotenv.config();
+
 const port = process.env.PORT || 5000;
 
 const connect = async () => {
@@ -32,6 +34,15 @@ app.listen(port, () => {
   console.log(`Example app listening on ports56 ${port}`);
   connect();
 });
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    optionsSuccessStatus: 204,
+  })
+); //所有人能請求
+
 app.use(express.json()); //可以接收json
 app.use(cookieParser()); //自動抓取cookie
 
