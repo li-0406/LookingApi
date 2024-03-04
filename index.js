@@ -34,15 +34,8 @@ app.listen(port, () => {
   console.log(`Example app listening on ports56 ${port}`);
   connect();
 });
-app.use(
-  cors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    optionsSuccessStatus: 204,
-  })
-); //所有人能請求
-
+//跨域請求
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json()); //可以接收json
 app.use(cookieParser()); //自動抓取cookie
 

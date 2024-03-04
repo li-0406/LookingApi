@@ -57,9 +57,9 @@ export const login = async (req, res, next) => {
       process.env.JWT
     );
     res
-      .cookie("JWT_token", token, { httpOnly: true }) //把token放到cookie
+      .cookie("JWT_token", token) //把token放到cookie
       .status(200)
-      .json({ userData, msg: "登入成功" });
+      .json({ userData, token, msg: "登入成功" });
   } catch (error) {
     next(errorMessage(500, "登入失敗", error));
   }

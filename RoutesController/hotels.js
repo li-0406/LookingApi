@@ -54,7 +54,7 @@ export const getAllHotels = async (req, res, next) => {
     const hotelsList = await Hotel.find({
       ...withQuery,
       cheapestPrice: { $gt: lowestPrice || 0, $lt: highestPrice || 9999 },
-    }).limit(8);
+    }).limit(99);
     res.status(200).json(hotelsList);
   } catch (error) {
     next(errorMessage(500, "無法抓取所有飯店資料", error));

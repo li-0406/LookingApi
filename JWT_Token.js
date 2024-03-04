@@ -3,8 +3,8 @@ import { errorMessage } from "./errorMessage.js";
 
 const JWT_Token = (req, res, next, callBack) => {
   const token = req.cookies.JWT_token; //在index.js 使用app.use(cookieParser()) 來抓取
-
-  if (!token) return next(errorMessage(401, "請先登入"));
+  if (!token) return next(errorMessage(401, { test: req.cookies }, "請先登入")); //沒抓到Token就顯示
+  //cookie解碼
   jwt.verify(token, process.env.JWT, (err, payload) => {
     if (err) return next(errorMessage(403, "TOKEN無效，解開JWT失敗"));
     req.userData = payload; //解碼後是一開始的user.id與user.isadmin
