@@ -35,7 +35,8 @@ app.listen(port, () => {
   connect();
 });
 //跨域請求
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+const allowedOrigins = ["http://localhost:3000", "https://li-0406.github.io"];
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json()); //可以接收json
 app.use(cookieParser()); //自動抓取cookie
 
